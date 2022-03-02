@@ -15,6 +15,8 @@
 
 <h1>TETRIS EN PYTHON (SERVEUR)</h1>
 <p>Ce projet a été codé avec <a href="https://github.com/periergeia">periergeia</a>, <a href="https://github.com/DominataurusRex">DominataurusRex</a> et <a href="https://github.com/BLASTUHQ">BLASTUHQ</a> pour le projet de deuxième trimestre de l'année scolaire 2021-2022 dans la spécialité NSI (Numériques et Sciences de l'Informatique) en <b>Python</b>.
+  
+<h2>Vous pouvez également trouvé le jeu via ce repo : <a href="https://github.com/Jouca/Tetris">Tetris Jeu</a></h2>
 
 ---
 
