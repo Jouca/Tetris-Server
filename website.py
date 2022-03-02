@@ -123,7 +123,7 @@ def check_connexion_cookies():
     """
     Permet de vérifier si l'utilisateur est connecté via les cookies.
     """
-    cursor = bddtest(DBHOST, DBDATABASE, DBUSER, DBPASSWORD)
+    cursor, conn = bddtest(DBHOST, DBDATABASE, DBUSER, DBPASSWORD)
     pseudo = request.cookies.get('Pseudo')
     motdepasse = request.cookies.get('Motdepasse')
     addresse_ip = request.remote_addr
@@ -206,7 +206,7 @@ def connexion():
         if check_connexion_cookies() is not None:
             return redirect(url_for("account"))
         return render_template("connexion.html")
-    cursor = bddtest(DBHOST, DBDATABASE, DBUSER, DBPASSWORD)
+    cursor, conn = bddtest(DBHOST, DBDATABASE, DBUSER, DBPASSWORD)
     jsondata = request.get_json()
     if jsondata:
         pseudo = jsondata["pseudo"]
@@ -234,7 +234,7 @@ def account():
     if request.method == "GET":
         check_compte = check_connexion_cookies()
         if check_compte is not None:
-            cursor = bddtest(DBHOST, DBDATABASE, DBUSER, DBPASSWORD)
+            cursor, conn = bddtest(DBHOST, DBDATABASE, DBUSER, DBPASSWORD)
             nomrole = check_role(check_compte, cursor)
             return render_template(
                 "account.html",
@@ -242,7 +242,7 @@ def account():
                 role=nomrole
             )
         return redirect(url_for("connexion"))
-    cursor = bddtest(DBHOST, DBDATABASE, DBUSER, DBPASSWORD)
+    cursor, conn = bddtest(DBHOST, DBDATABASE, DBUSER, DBPASSWORD)
 
     pseudo = request.form.get('pseudo')
     motdepasse = request.form.get('motdepasse')
