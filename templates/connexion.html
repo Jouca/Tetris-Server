@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<link rel="stylesheet" type="text/css" href="http://clarifygdps.com/mastermind/templates/styles.css"/>
+		<meta charset="utf-8">
+		<title>Connexion Tetris</title>
+	</head>
+	<body>
+		<form action="../account" method="post">
+			<h1>Pseudo</h1><br>
+			<input type="text" name="pseudo" style="font-size: 20px;"/><br>
+			<h1>Mot de passe</h1><br>
+			<input type="password" name="motdepasse" style="font-size: 20px;"/><br><br>
+			<center>{{ recaptcha }}</center>
+			<br>
+			<input type="submit" value="Connexion" style="font-size: 20px;"/>
+			{% with erreur = get_flashed_messages() %}
+			{% for message in erreur %}
+			{% if message == "OK_EMAIL" %}
+			<p style="color: greenyellow; font-size: 20px;">Votre email est maintenant vérifié ! :)<br>Vous pouvez dès à présent vous connecter</p>
+			{% else %}
+			<p style="color: red; font-size: 20px;">{{message}}</p>
+			{% endif %}
+			{% endfor %}
+			{% endwith %}
+		</form>
+	</body>
+</html>

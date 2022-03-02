@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<link rel="stylesheet" type="text/css" href="http://clarifygdps.com/mastermind/templates/styles.css"/>
+		<meta charset="utf-8">
+		<title>Gestion Compte Tetris</title>
+	</head>
+	<body>
+		<form action="../change_motdepasse/" method="post">
+			<h1>Mot de passe</h1><br>
+			<input type="password" name="motdepasse" style="font-size: 20px;"/><br>
+			<h1>Nouveau mot de passe</h1><br>
+			<input type="password" name="newmotdepasse" style="font-size: 20px;"/><br><br>
+			<input type="submit" value="Modifier" style="font-size: 20px;"/>
+			{% with erreur = get_flashed_messages() %}
+			{% for message in erreur %}
+			{% if message != "Mot de passe changé !" %}
+			<p style="color: red; font-size: 20px;">{{message}}</p>
+			{% endif %}
+			{% endfor %}
+			{% endwith %}
+
+            {% with successmessage = get_flashed_messages() %}
+			{% for message in successmessage%}
+			{% if message == "Mot de passe changé !" %}
+			<p style="color: greenyellow; font-size: 20px;">{{message}}</p>
+			{% endif %}
+			{% endfor %}
+			{% endwith %}
+		</form>
+	</body>
+</html>

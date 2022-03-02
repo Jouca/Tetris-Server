@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<link rel="stylesheet" href="http://clarifygdps.com/mastermind/templates/styles.css"/>
+		<meta charset="utf-8">
+		<title>Inscription Tetris</title>
+	</head>
+	<body>
+		<b><p style="font-size: 50px; color: greenyellow;">Félicitations !</p></b>
+        {% with pseudo = get_flashed_messages() %}
+		{% for message in pseudo %}
+        <h3 style="font-size: 30px;">Votre compte {{message}} a été crée avec succès ! :)</h3>
+        {% endfor %}
+		{% endwith %}
+        <br>
+        <h3>Nous vous invitons à aller voir dans votre boîte mail (et également dans vôtre boîte spam), de cliquer sur le lien de vérification afin de vous connecter dessus et ainsi pouvoir jouer !<br>(Il est possible que vous devez attendre quelques minutes avant de recevoir le mail)</h3>
+	</body>
+</html>

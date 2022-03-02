@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<link rel="stylesheet" type="text/css" href="http://clarifygdps.com/mastermind/templates/styles.css"/>
+		<meta charset="utf-8">
+		<title>Inscription Tetris</title>
+	</head>
+	<body>
+		<form action="../inscription/resultat" method="post">
+			<h1>Pseudo</h1><br>
+			<input type="text" name="pseudo" /><br>
+			<h1>Email</h1><br>
+			<input type="email" name="email" /><br>
+			<h1>Mot de passe</h1><br>
+			<input type="password" name="motdepasse" /><br>
+			<h1>Répéter le Mot de passe</h1><br>
+			<input type="password" name="repeatmotdepasse" /><br><br>
+			<center>{{ recaptcha }}</center>
+			<br>
+			<input type="submit" value="Envoyer" />
+			{% with erreur = get_flashed_messages() %}
+			{% for message in erreur %}
+			{% if message %}
+			<p style="color: red; font-size: 20px;">{{message}}</p>
+			{% endif %}
+			{% endfor %}
+			{% endwith %}
+		</form>
+	</body>
+</html>

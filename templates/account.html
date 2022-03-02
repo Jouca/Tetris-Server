@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Gestion Compte Tetris</title>
+	</head>
+	<body style="background-color: darkgrey;">
+        {% if role %}
+        <center><p style="font-size: 40px;">Bienvenue <b>{{role}}</b> {{pseudo}} !</p></center>
+        {% else %}
+        <center><p style="font-size: 40px;">Bienvenue {{pseudo}} !</p></center>
+        {% endif %}
+        <br>
+        <ul style="font-size: 27px; text-align:center;">
+            <li><a href= "../account/change_motdepasse/" target = "_self">Changer le mot de passe</a></li>
+            <li><a href = "../deconnexion/" target = "_self">Déconnexion</a></li>
+        </ul>
+	</body>
+</html>
