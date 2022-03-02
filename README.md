@@ -7,7 +7,6 @@
 <div align="center">
   <img alt="GitHub" src="https://img.shields.io/github/license/Jouca/Tetris-Server?style=for-the-badge">
   <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Jouca/Tetris-Server?style=for-the-badge">
-  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Jouca/Tetris-Server?style=for-the-badge">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Jouca/Tetris-Server?style=for-the-badge">
 </div>
 
